@@ -1,0 +1,1119 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Patricia Gaete Ceballos — Portafolio</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;700&family=DM+Sans:ital,wght@0,300;0,400;0,500;1,300&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --navy:#0B1F3A;--navy-mid:#162D50;--blue:#1A5FA8;
+    --accent:#C8A96E;--accent-light:#E8D4A8;
+    --cream:#F7F4EE;--cream-dark:#EDE8DF;--white:#FFFFFF;
+    --text-dark:#0B1F3A;--text-mid:#3D5170;--text-muted:#7A8FAD;
+    --serif:'Playfair Display',Georgia,serif;--sans:'DM Sans',sans-serif;
+  }
+  *,*::before,*::after{box-sizing:border-box;margin:0;padding:0;}
+  html{scroll-behavior:smooth;}
+  body{font-family:var(--sans);background:var(--cream);color:var(--text-dark);overflow-x:hidden;}
+
+  /* NAV */
+  nav{position:fixed;top:0;left:0;right:0;z-index:200;display:flex;align-items:center;justify-content:space-between;padding:0 3rem;height:64px;background:rgba(247,244,238,0.94);backdrop-filter:blur(12px);border-bottom:1px solid rgba(200,169,110,0.2);}
+  .nav-logo{font-family:var(--serif);font-size:18px;font-weight:700;color:var(--navy);}
+  .nav-logo span{color:var(--accent);}
+  .nav-links{display:flex;gap:1.75rem;list-style:none;}
+  .nav-links a{font-size:11px;color:var(--text-mid);text-decoration:none;letter-spacing:0.07em;text-transform:uppercase;transition:color 0.2s;}
+  .nav-links a:hover{color:var(--accent);}
+
+  /* HERO */
+  .hero{min-height:100vh;display:grid;grid-template-columns:1fr 1fr;padding-top:64px;overflow:hidden;}
+  .hero-left{background:var(--navy);display:flex;flex-direction:column;justify-content:center;padding:5rem 4rem 5rem 5rem;position:relative;}
+  .hero-left::before{content:'';position:absolute;top:-80px;right:-80px;width:320px;height:320px;border-radius:50%;border:1px solid rgba(200,169,110,0.12);}
+  .hero-tag{font-size:11px;font-weight:500;letter-spacing:0.18em;text-transform:uppercase;color:var(--accent);margin-bottom:1.5rem;display:flex;align-items:center;gap:10px;}
+  .hero-tag::before{content:'';display:block;width:28px;height:1px;background:var(--accent);}
+  .hero h1{font-family:var(--serif);font-size:clamp(36px,4.5vw,56px);font-weight:700;color:var(--white);line-height:1.08;letter-spacing:-1px;margin-bottom:1.25rem;}
+  .hero h1 em{font-style:italic;color:var(--accent-light);}
+  .hero-roles{display:flex;flex-wrap:wrap;gap:7px;margin-bottom:1.25rem;}
+  .role-badge{font-size:10px;font-weight:500;letter-spacing:0.09em;text-transform:uppercase;padding:4px 11px;border-radius:2px;border:1px solid rgba(200,169,110,0.35);color:rgba(232,212,168,0.8);}
+  .role-badge.main{background:rgba(200,169,110,0.15);border-color:var(--accent);color:var(--accent-light);}
+  .hero-desc{font-size:14px;font-weight:300;color:rgba(255,255,255,0.6);line-height:1.8;max-width:380px;margin-bottom:2rem;}
+  .hero-cta{display:flex;gap:12px;flex-wrap:wrap;}
+  .btn{display:inline-flex;align-items:center;padding:11px 22px;border-radius:2px;font-size:13px;font-weight:500;letter-spacing:0.04em;text-decoration:none;transition:all 0.2s;cursor:pointer;border:none;font-family:var(--sans);}
+  .btn-gold{background:var(--accent);color:var(--navy);}
+  .btn-gold:hover{background:var(--accent-light);}
+  .btn-outline{background:transparent;color:rgba(255,255,255,0.65);border:1px solid rgba(255,255,255,0.2);}
+  .btn-outline:hover{border-color:var(--accent);color:var(--accent);}
+  .hero-right{background:var(--cream-dark);display:flex;flex-direction:column;justify-content:center;padding:4rem;position:relative;}
+  .hero-right::before{content:'"';font-family:var(--serif);font-size:200px;color:rgba(11,31,58,0.05);position:absolute;top:3rem;left:3rem;line-height:1;}
+  .stats-grid{display:grid;grid-template-columns:1fr 1fr;gap:1.25rem;margin-bottom:2rem;}
+  .stat-box{background:var(--white);padding:1.25rem 1.5rem;border-radius:2px;border-left:3px solid var(--accent);}
+  .stat-num{font-family:var(--serif);font-size:36px;font-weight:700;color:var(--navy);line-height:1;margin-bottom:4px;}
+  .stat-label{font-size:11px;color:var(--text-muted);}
+  .hero-contact-row{display:flex;gap:1.5rem;flex-wrap:wrap;}
+  .hero-contact-row a{font-size:12px;color:var(--text-muted);text-decoration:none;display:flex;align-items:center;gap:6px;transition:color 0.2s;}
+  .hero-contact-row a:hover{color:var(--blue);}
+  .contact-dot{width:5px;height:5px;border-radius:50%;background:var(--accent);flex-shrink:0;}
+
+  /* SECTIONS */
+  section{padding:5.5rem 5rem;}
+  .section-header{display:flex;align-items:flex-start;gap:1.5rem;margin-bottom:3rem;}
+  .section-num{font-family:var(--serif);font-size:13px;color:var(--accent);letter-spacing:0.1em;margin-top:6px;flex-shrink:0;}
+  .section-title{font-family:var(--serif);font-size:clamp(26px,3.5vw,42px);font-weight:700;color:var(--navy);line-height:1.1;letter-spacing:-0.5px;}
+  .section-title em{font-style:italic;color:var(--blue);}
+  .section-divider{width:48px;height:2px;background:var(--accent);margin-top:12px;}
+
+  /* EXPERIENCIA */
+  #experiencia{background:var(--white);}
+  .tl-entry{display:grid;grid-template-columns:200px 1fr;gap:3rem;margin-bottom:3rem;padding-bottom:3rem;border-bottom:1px solid var(--cream-dark);opacity:0;transform:translateY(20px);transition:opacity 0.5s,transform 0.5s;}
+  .tl-entry.visible{opacity:1;transform:translateY(0);}
+  .tl-entry:last-child{border-bottom:none;margin-bottom:0;}
+  .tl-period{font-size:12px;color:var(--text-muted);font-weight:300;margin-bottom:8px;}
+  .tl-company{font-family:var(--serif);font-size:18px;font-weight:700;color:var(--navy);margin-bottom:6px;}
+  .tl-badge{display:inline-block;font-size:10px;font-weight:500;letter-spacing:0.12em;text-transform:uppercase;padding:3px 10px;border-radius:2px;background:var(--accent-light);color:#7A5C1E;}
+  .tl-role{font-size:16px;font-weight:500;color:var(--navy);margin-bottom:0.75rem;}
+  .tl-list{list-style:none;margin-bottom:0.875rem;}
+  .tl-list li{font-size:13px;font-weight:300;color:var(--text-mid);line-height:1.7;padding-left:1.25rem;position:relative;margin-bottom:4px;}
+  .tl-list li::before{content:'';position:absolute;left:0;top:10px;width:5px;height:1px;background:var(--accent);}
+  .tag-row{display:flex;flex-wrap:wrap;gap:5px;margin-top:0.75rem;}
+  .tag{font-size:10px;letter-spacing:0.07em;text-transform:uppercase;padding:3px 8px;border-radius:1px;font-weight:500;}
+  .tag-blue{background:#E6F1FB;color:#0C447C;}
+  .tag-gold{background:var(--accent-light);color:#7A5C1E;}
+
+  /* PROYECTOS PRO */
+  #proyectos-pro{background:var(--cream);}
+  .proj-grid-2{display:grid;grid-template-columns:repeat(2,1fr);gap:1.25rem;}
+  .proj-card-light{border:1px solid var(--cream-dark);border-left:3px solid var(--accent);border-radius:2px;padding:1.75rem;background:var(--white);transition:border-color 0.2s,background 0.2s;}
+  .proj-card-light:hover{border-color:var(--accent);background:#fdf9f2;}
+  .proj-client{font-size:10px;letter-spacing:0.14em;text-transform:uppercase;color:var(--accent);margin-bottom:6px;font-weight:500;}
+  .proj-title{font-family:var(--serif);font-size:17px;font-weight:700;color:var(--navy);margin-bottom:7px;line-height:1.3;}
+  .proj-desc{font-size:13px;font-weight:300;color:var(--text-mid);line-height:1.65;}
+  .proj-tags{display:flex;flex-wrap:wrap;gap:5px;margin-top:0.75rem;}
+  .proj-tag-sm{font-size:10px;padding:2px 7px;border:1px solid var(--cream-dark);color:var(--text-muted);border-radius:1px;}
+  .btn-ver-mas{display:inline-flex;align-items:center;gap:6px;margin-top:1rem;font-size:11px;font-weight:500;letter-spacing:0.08em;text-transform:uppercase;color:var(--accent);background:none;border:none;cursor:pointer;padding:0;font-family:var(--sans);transition:color 0.2s;}
+  .btn-ver-mas:hover{color:var(--navy);}
+  .btn-ver-mas svg{width:14px;height:14px;}
+
+  /* PROYECTOS PO */
+  #proyectos-po{background:var(--navy);}
+  #proyectos-po .section-title{color:var(--white);}
+  #proyectos-po .section-title em{color:var(--accent-light);}
+  .po-intro{font-size:14px;font-weight:300;color:rgba(255,255,255,0.5);line-height:1.8;max-width:700px;margin-bottom:2.5rem;}
+  .proj-po-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1.5px;background:rgba(255,255,255,0.05);}
+  .proj-po-card{background:var(--navy-mid);padding:2rem;position:relative;overflow:hidden;transition:background 0.3s;}
+  .proj-po-card:hover{background:#1e3d68;}
+  .proj-po-card::before{content:'';position:absolute;top:0;left:0;width:3px;height:0;background:var(--accent);transition:height 0.3s;}
+  .proj-po-card:hover::before{height:100%;}
+  .proj-po-num{font-family:var(--serif);font-size:40px;font-weight:700;color:rgba(255,255,255,0.05);position:absolute;top:1rem;right:1.25rem;line-height:1;}
+  .proj-po-label{font-size:10px;letter-spacing:0.16em;text-transform:uppercase;color:var(--accent);margin-bottom:0.5rem;}
+  .proj-po-title{font-family:var(--serif);font-size:15px;font-weight:700;color:var(--white);margin-bottom:0.6rem;line-height:1.3;}
+  .proj-po-desc{font-size:12px;font-weight:300;color:rgba(255,255,255,0.48);line-height:1.65;}
+  .proj-po-tags{display:flex;flex-wrap:wrap;gap:5px;margin-top:0.875rem;}
+  .proj-po-tag{font-size:9px;letter-spacing:0.07em;text-transform:uppercase;padding:2px 7px;border:1px solid rgba(200,169,110,0.22);color:rgba(200,169,110,0.6);border-radius:1px;}
+  .btn-ver-mas-dark{display:inline-flex;align-items:center;gap:6px;margin-top:1rem;font-size:11px;font-weight:500;letter-spacing:0.08em;text-transform:uppercase;color:var(--accent);background:none;border:none;cursor:pointer;padding:0;font-family:var(--sans);transition:opacity 0.2s;}
+  .btn-ver-mas-dark:hover{opacity:0.7;}
+
+  /* SKILLS */
+  #skills{background:var(--cream-dark);}
+  .skills-layout{display:grid;grid-template-columns:1fr 1.6fr;gap:5rem;align-items:start;}
+  .skills-intro{font-size:14px;font-weight:300;color:var(--text-mid);line-height:1.85;}
+  .skills-intro strong{color:var(--navy);font-weight:500;}
+  .skill-group{margin-bottom:1.75rem;}
+  .skill-group-label{font-size:10px;font-weight:500;letter-spacing:0.14em;text-transform:uppercase;color:var(--accent);margin-bottom:0.75rem;display:flex;align-items:center;gap:10px;}
+  .skill-group-label::after{content:'';flex:1;height:1px;background:rgba(0,0,0,0.08);}
+  .chips{display:flex;flex-wrap:wrap;gap:6px;}
+  .chip{font-size:12px;padding:6px 13px;border-radius:2px;transition:all 0.2s;}
+  .chip-navy{background:var(--navy);color:var(--accent-light);}
+  .chip-po{background:#E6F1FB;color:#0C447C;border:1px solid #B5D4F4;}
+  .chip-outline{background:var(--white);color:var(--text-mid);border:1px solid var(--cream-dark);}
+  .chip-outline:hover{border-color:var(--accent);color:var(--navy);}
+
+  /* EDUCACIÓN */
+  #educacion{background:var(--white);}
+  .edu-layout{display:grid;grid-template-columns:1fr 1fr;gap:4rem;}
+  .edu-card{background:var(--navy);padding:2.25rem;border-radius:2px;margin-bottom:1.25rem;}
+  .edu-degree{font-family:var(--serif);font-size:19px;font-weight:700;color:var(--white);margin-bottom:8px;line-height:1.3;}
+  .edu-school{font-size:13px;color:var(--accent);margin-bottom:4px;}
+  .edu-year{font-size:12px;color:rgba(255,255,255,0.38);font-weight:300;}
+  .cert-stack{display:flex;flex-direction:column;gap:0.75rem;}
+  .cert-row{display:flex;align-items:flex-start;gap:16px;padding:1rem 1.25rem;border:1px solid var(--cream-dark);border-radius:2px;transition:border-color 0.2s,background 0.2s;}
+  .cert-row:hover{border-color:var(--accent);background:#fdf9f2;}
+  .cert-yr{font-family:var(--serif);font-size:20px;font-weight:700;color:var(--accent);flex-shrink:0;line-height:1;min-width:44px;}
+  .cert-name{font-size:13px;font-weight:500;color:var(--navy);margin-bottom:2px;}
+  .cert-issuer{font-size:11px;color:var(--text-muted);font-weight:300;}
+
+  /* CONTACTO */
+  #contacto{background:var(--navy);text-align:center;padding:6rem 5rem;}
+  #contacto .section-title{color:var(--white);}
+  #contacto .section-title em{color:var(--accent-light);}
+  #contacto .section-header{justify-content:center;flex-direction:column;align-items:center;}
+  #contacto .section-divider{margin:12px auto 0;}
+  .contact-intro{font-size:15px;font-weight:300;color:rgba(255,255,255,0.5);max-width:480px;margin:0 auto 3rem;line-height:1.8;}
+  .contact-cards{display:flex;justify-content:center;gap:1rem;flex-wrap:wrap;}
+  .contact-item{background:var(--navy-mid);padding:1.25rem 1.75rem;border-radius:2px;text-align:left;min-width:185px;border-bottom:2px solid transparent;transition:border-color 0.2s;}
+  .contact-item:hover{border-color:var(--accent);}
+  .ci-label{font-size:10px;letter-spacing:0.14em;text-transform:uppercase;color:var(--text-muted);margin-bottom:6px;}
+  .ci-value{font-size:13px;color:rgba(255,255,255,0.8);text-decoration:none;display:block;}
+  .ci-value:hover{color:var(--accent);}
+
+  /* FOOTER */
+  footer{background:#06131F;padding:2rem 5rem;display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:1rem;}
+  .footer-logo{font-family:var(--serif);font-size:16px;font-weight:700;color:var(--white);}
+  .footer-logo span{color:var(--accent);}
+  .footer-copy{font-size:12px;color:rgba(255,255,255,0.25);}
+
+  /* ===================== MODAL SYSTEM ===================== */
+  .modal-overlay{
+    display:none;position:fixed;inset:0;z-index:1000;
+    background:rgba(11,31,58,0.85);
+    backdrop-filter:blur(6px);
+    align-items:center;justify-content:center;padding:2rem;
+  }
+  .modal-overlay.active{display:flex;}
+  .modal-box{
+    background:var(--white);border-radius:2px;width:100%;max-width:680px;
+    max-height:88vh;overflow-y:auto;position:relative;
+    animation:modalIn 0.25s ease;
+  }
+  @keyframes modalIn{from{opacity:0;transform:translateY(16px);}to{opacity:1;transform:translateY(0);}}
+  .modal-header{
+    background:var(--navy);padding:2rem 2.5rem 1.5rem;
+    border-bottom:3px solid var(--accent);position:sticky;top:0;z-index:10;
+  }
+  .modal-label{font-size:10px;letter-spacing:0.16em;text-transform:uppercase;color:var(--accent);margin-bottom:6px;}
+  .modal-title{font-family:var(--serif);font-size:22px;font-weight:700;color:var(--white);line-height:1.3;}
+  .modal-close{
+    position:absolute;top:1.25rem;right:1.5rem;
+    background:rgba(255,255,255,0.1);border:none;cursor:pointer;
+    width:32px;height:32px;border-radius:50%;display:flex;align-items:center;justify-content:center;
+    transition:background 0.2s;color:var(--white);font-size:18px;
+  }
+  .modal-close:hover{background:rgba(200,169,110,0.3);}
+  .modal-body{padding:2rem 2.5rem;}
+  .modal-section{margin-bottom:1.75rem;}
+  .modal-section:last-child{margin-bottom:0;}
+  .modal-section-title{font-size:11px;font-weight:500;letter-spacing:0.13em;text-transform:uppercase;color:var(--accent);margin-bottom:0.75rem;padding-bottom:6px;border-bottom:1px solid var(--cream-dark);}
+  .modal-text{font-size:14px;font-weight:300;color:var(--text-mid);line-height:1.75;}
+  .modal-list{list-style:none;margin-top:0.5rem;}
+  .modal-list li{font-size:13px;font-weight:300;color:var(--text-mid);padding-left:1.25rem;position:relative;margin-bottom:5px;line-height:1.65;}
+  .modal-list li::before{content:'';position:absolute;left:0;top:9px;width:5px;height:1px;background:var(--accent);}
+  .modal-link-grid{display:flex;flex-direction:column;gap:0.75rem;margin-top:0.5rem;}
+  .modal-link-item{
+    display:flex;align-items:center;gap:12px;padding:0.875rem 1rem;
+    border:1px solid var(--cream-dark);border-radius:2px;text-decoration:none;
+    transition:border-color 0.2s,background 0.2s;background:var(--white);
+  }
+  .modal-link-item:hover{border-color:var(--accent);background:#fdf9f2;}
+  .modal-link-icon{width:36px;height:36px;border-radius:50%;background:var(--cream-dark);display:flex;align-items:center;justify-content:center;flex-shrink:0;}
+  .modal-link-icon svg{width:16px;height:16px;}
+  .modal-link-text{}
+  .modal-link-label{font-size:12px;font-weight:500;color:var(--navy);display:block;}
+  .modal-link-url{font-size:11px;color:var(--text-muted);font-weight:300;}
+  .modal-tags{display:flex;flex-wrap:wrap;gap:6px;margin-top:0.5rem;}
+  .modal-tag{font-size:11px;padding:4px 10px;background:#E6F1FB;color:#0C447C;border-radius:1px;}
+
+  /* ANIMATIONS */
+  @keyframes fadeUp{from{opacity:0;transform:translateY(24px);}to{opacity:1;transform:translateY(0);}}
+  .hero-left>*{opacity:0;animation:fadeUp 0.7s forwards;}
+  .hero-left .hero-tag{animation-delay:0.1s;}
+  .hero-left h1{animation-delay:0.25s;}
+  .hero-left .hero-roles{animation-delay:0.35s;}
+  .hero-left .hero-desc{animation-delay:0.45s;}
+  .hero-left .hero-cta{animation-delay:0.58s;}
+  .hero-right>*{opacity:0;animation:fadeUp 0.7s forwards;animation-delay:0.65s;}
+
+  /* RESPONSIVE */
+  @media(max-width:1000px){.proj-po-grid{grid-template-columns:1fr 1fr;}}
+  @media(max-width:900px){
+    .hero{grid-template-columns:1fr;}
+    .hero-right{padding:3rem 2rem;}
+    .tl-entry{grid-template-columns:1fr;gap:0.5rem;}
+    .proj-grid-2{grid-template-columns:1fr;}
+    .proj-po-grid{grid-template-columns:1fr;}
+    .skills-layout{grid-template-columns:1fr;gap:2.5rem;}
+    .edu-layout{grid-template-columns:1fr;}
+    section{padding:4rem 1.75rem;}
+    #contacto{padding:4rem 1.75rem;}
+    nav{padding:0 1.5rem;}
+    .nav-links{display:none;}
+    footer{padding:2rem 1.75rem;}
+    .modal-box{max-width:100%;}
+    .modal-header,.modal-body{padding:1.5rem;}
+  }
+</style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav>
+  <div class="nav-logo">Patricia<span>.</span></div>
+  <ul class="nav-links">
+    <li><a href="#experiencia">Experiencia</a></li>
+    <li><a href="#proyectos-pro">Proyectos TI</a></li>
+    <li><a href="#proyectos-po">Product Owner</a></li>
+    <li><a href="#skills">Skills</a></li>
+    <li><a href="#educacion">Formación</a></li>
+    <li><a href="#contacto">Contacto</a></li>
+  </ul>
+</nav>
+
+<!-- HERO -->
+<div class="hero">
+  <div class="hero-left">
+    <div class="hero-tag">Portafolio Profesional</div>
+    <h1>Patricia<br>Gaete <em>Ceballos</em></h1>
+    <div class="hero-roles">
+      <span class="role-badge main">Gobierno TI</span>
+      <span class="role-badge main">Product Owner</span>
+      <span class="role-badge">Gestión de Procesos</span>
+      <span class="role-badge">Mejora Continua</span>
+    </div>
+    <p class="hero-desc">Ingeniero de Procesos con más de 10 años en Gobierno TI, Calidad y Mejora Continua. Especialista en ISO 9001, COBIT 2019 e ITIL V4, con formación en metodologías ágiles y experiencia práctica como Product Owner.</p>
+    <div class="hero-cta">
+      <a href="#experiencia" class="btn btn-gold">Ver experiencia</a>
+      <a href="#contacto" class="btn btn-outline">Contactar</a>
+    </div>
+  </div>
+  <div class="hero-right">
+    <div class="stats-grid">
+      <div class="stat-box"><div class="stat-num">10+</div><div class="stat-label">Años de experiencia</div></div>
+      <div class="stat-box"><div class="stat-num">3</div><div class="stat-label">Normas ISO certificadas</div></div>
+      <div class="stat-box"><div class="stat-num">5+</div><div class="stat-label">Proyectos consultoría</div></div>
+      <div class="stat-box"><div class="stat-num">4</div><div class="stat-label">Proyectos como PO</div></div>
+    </div>
+    <div class="hero-contact-row">
+      <a href="mailto:pathygatt20@gmail.com"><span class="contact-dot"></span>pathygatt20@gmail.com</a>
+      <a href="tel:+56985132925"><span class="contact-dot"></span>+56 9 8513 2925</a>
+      <a href="https://www.linkedin.com/in/patriciagaete-ceballos-08524024/" target="_blank"><span class="contact-dot"></span>LinkedIn</a>
+    </div>
+  </div>
+</div>
+
+<!-- EXPERIENCIA -->
+<section id="experiencia">
+  <div class="section-header">
+    <div class="section-num">01</div>
+    <div><div class="section-title">Experiencia <em>laboral</em></div><div class="section-divider"></div></div>
+  </div>
+
+  <div class="tl-entry">
+    <div>
+      <div class="tl-period">Mayo 2022 — Actualidad</div>
+      <div class="tl-company">Inchcape</div>
+      <span class="tl-badge">Cargo actual</span>
+    </div>
+    <div>
+      <div class="tl-role">Jefe de Gobierno TI</div>
+      <ul class="tl-list">
+        <li>Responsable del Marco de Gobierno basado en COBIT 2019: lineamientos, artefactos, roles y responsabilidades a nivel gerencial.</li>
+        <li>Líder del equipo IT Government Database en la integración Derco–Inchcape, gestionando riesgos, impactos y comunicación con stakeholders.</li>
+        <li>Diseño y ejecución de estrategia de Change Management para transiciones controladas de proyectos.</li>
+        <li>Fomento de estandarización documental, mejora continua y apoyo en auditorías externas.</li>
+      </ul>
+      <div class="tag-row">
+        <span class="tag tag-blue">COBIT 2019</span>
+        <span class="tag tag-blue">Change Management</span>
+        <span class="tag tag-blue">Gobierno TI</span>
+        <span class="tag tag-gold">Stakeholder Management</span>
+      </div>
+    </div>
+  </div>
+
+  <div class="tl-entry">
+    <div>
+      <div class="tl-period">Mayo 2015 — Mayo 2022</div>
+      <div class="tl-company">Adexus</div>
+    </div>
+    <div>
+      <div class="tl-role">Consultora de Procesos · Especialista de Calidad</div>
+      <ul class="tl-list">
+        <li>Certificación y administración del SGC ISO 9001:2015.</li>
+        <li>Integración de sistemas de gestión: ISO 9001, ISO 20000-1 e ISO 27001.</li>
+        <li>Levantamiento, diseño e implementación de procesos operacionales y KPIs.</li>
+        <li>Gestión de auditorías de primera, segunda y tercera parte en servicios TIC.</li>
+        <li>Consultoría en Transbank, VTR, INN y Carabineros de Chile.</li>
+      </ul>
+      <div class="tag-row">
+        <span class="tag tag-blue">ISO 9001:2015</span>
+        <span class="tag tag-blue">ITIL</span>
+        <span class="tag tag-gold">Auditorías</span>
+        <span class="tag tag-gold">BPM</span>
+      </div>
+    </div>
+  </div>
+
+  <div class="tl-entry">
+    <div>
+      <div class="tl-period">Abril 2011 — Mayo 2015</div>
+      <div class="tl-company">Casino Express</div>
+    </div>
+    <div>
+      <div class="tl-role">Supervisora & Auditora de Calidad</div>
+      <ul class="tl-list">
+        <li>Auditorías in situ a locales y proveedores externos.</li>
+        <li>Responsable de planta Cook & Chill: control de procesos y gestión de no conformidades.</li>
+        <li>Capacitación de personal en mejora de procesos operacionales.</li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<!-- PROYECTOS CONSULTORÍA TI -->
+<section id="proyectos-pro">
+  <div class="section-header">
+    <div class="section-num">02</div>
+    <div><div class="section-title">Proyectos de <em>consultoría TI</em></div><div class="section-divider"></div></div>
+  </div>
+  <div class="proj-grid-2">
+
+    <div class="proj-card-light">
+      <div class="proj-client">Carabineros de Chile · 2016–2017</div>
+      <div class="proj-title">Modelo de Gestión por Procesos TIC</div>
+      <div class="proj-desc">Análisis As Is y diseño To Be de procesos en la Dirección TIC. Catálogo de servicios basado en COBIT e ITIL.</div>
+      <div class="proj-tags"><span class="proj-tag-sm">COBIT</span><span class="proj-tag-sm">ITIL</span><span class="proj-tag-sm">Catálogo de servicios</span></div>
+      <button class="btn-ver-mas" onclick="openModal('carabineros')">
+        Ver detalle <svg viewBox="0 0 16 16" fill="none"><path d="M3 8h10M9 4l4 4-4 4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+      </button>
+    </div>
+
+    <div class="proj-card-light">
+      <div class="proj-client">Transbank · 2015–2016</div>
+      <div class="proj-title">Mejora de Procesos Logísticos</div>
+      <div class="proj-desc">Levantamiento y diseño de procesos de producción, mantención y despacho de equipos POS y PINPAD.</div>
+      <div class="proj-tags"><span class="proj-tag-sm">BPM</span><span class="proj-tag-sm">Mejora continua</span><span class="proj-tag-sm">Logística</span></div>
+      <button class="btn-ver-mas" onclick="openModal('transbank')">
+        Ver detalle <svg viewBox="0 0 16 16" fill="none"><path d="M3 8h10M9 4l4 4-4 4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+      </button>
+    </div>
+
+    <div class="proj-card-light">
+      <div class="proj-client">VTR · 2017–2018</div>
+      <div class="proj-title">Optimización de Sitios Técnicos</div>
+      <div class="proj-desc">Rediseño de procesos To Be en sitios técnicos VTR para minimizar tiempos y reducir riesgos operacionales.</div>
+      <div class="proj-tags"><span class="proj-tag-sm">Diseño de procesos</span><span class="proj-tag-sm">Instructivos</span><span class="proj-tag-sm">Riesgos</span></div>
+      <button class="btn-ver-mas" onclick="openModal('vtr')">
+        Ver detalle <svg viewBox="0 0 16 16" fill="none"><path d="M3 8h10M9 4l4 4-4 4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+      </button>
+    </div>
+
+    <div class="proj-card-light">
+      <div class="proj-client">INN · 2016</div>
+      <div class="proj-title">Sistema de Control de Procesos DAC</div>
+      <div class="proj-desc">Diseño de sistema de información para la División de Acreditación. Requerimientos, UML y mockups.</div>
+      <div class="proj-tags"><span class="proj-tag-sm">UML</span><span class="proj-tag-sm">Requerimientos</span><span class="proj-tag-sm">Mockups</span></div>
+      <button class="btn-ver-mas" onclick="openModal('inn')">
+        Ver detalle <svg viewBox="0 0 16 16" fill="none"><path d="M3 8h10M9 4l4 4-4 4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+      </button>
+    </div>
+
+  </div>
+</section>
+
+<!-- PROYECTOS PO -->
+<section id="proyectos-po">
+  <div class="section-header">
+    <div class="section-num" style="color:var(--accent);">03</div>
+    <div><div class="section-title">Proyectos como <em>Product Owner</em></div><div class="section-divider"></div></div>
+  </div>
+  <p class="po-intro">Formación aplicada asumiendo el rol de Product Owner: visión de producto, backlog, priorización MoSCoW, historias de usuario, roadmap, métricas y validación con usuarios reales.</p>
+  <div class="proj-po-grid">
+
+    <div class="proj-po-card">
+      <div class="proj-po-num">01</div>
+      <div class="proj-po-label">Turismo · BIOMA — Módulo 3</div>
+      <div class="proj-po-title">Vitrina Digital para Pymes Turísticas</div>
+      <div class="proj-po-desc">MVP para visibilizar pymes turísticas de la Región de Los Ríos. Modelo Canvas, validación con encuesta real, hipótesis de valor y métricas de conversión.</div>
+      <div class="proj-po-tags"><span class="proj-po-tag">MVP</span><span class="proj-po-tag">Modelo Canvas</span><span class="proj-po-tag">Lean Startup</span></div>
+      <button class="btn-ver-mas-dark" onclick="openModal('bioma1')">
+        Ver detalle →
+      </button>
+    </div>
+
+    <div class="proj-po-card">
+      <div class="proj-po-num">02</div>
+      <div class="proj-po-label">Turismo · BIOMA — ABP 6</div>
+      <div class="proj-po-title">Narrativa y Roadmap de Producto</div>
+      <div class="proj-po-desc">Visión de producto, presupuesto Scrum, roadmap por etapas, 4 historias de usuario con DoD, priorización MoSCoW y métricas ágiles.</div>
+      <div class="proj-po-tags"><span class="proj-po-tag">Product Owner</span><span class="proj-po-tag">Scrum</span><span class="proj-po-tag">MoSCoW</span></div>
+      <button class="btn-ver-mas-dark" onclick="openModal('bioma2')">
+        Ver detalle →
+      </button>
+    </div>
+
+    <div class="proj-po-card">
+      <div class="proj-po-num">03</div>
+      <div class="proj-po-label">Educación · ABP 7</div>
+      <div class="proj-po-title">Agile Inception — EduDigital PAES</div>
+      <div class="proj-po-desc">Agile Inception para plataforma móvil PAES. Elevator Pitch, MVP 12 semanas, User Story Mapping, Mapa de Empatía e Impact Mapping.</div>
+      <div class="proj-po-tags"><span class="proj-po-tag">Agile Inception</span><span class="proj-po-tag">User Story Mapping</span></div>
+      <button class="btn-ver-mas-dark" onclick="openModal('edudigital')">
+        Ver detalle →
+      </button>
+    </div>
+
+    <div class="proj-po-card">
+      <div class="proj-po-num">04</div>
+      <div class="proj-po-label">AgTech · Módulo 2</div>
+      <div class="proj-po-title">Transformación Digital — Cerezas Lida</div>
+      <div class="proj-po-desc">Proyecto AgTech para empresa frutícola exportadora. KPIs, plan presupuestario de 77M CLP y priorización de iniciativas de riego inteligente.</div>
+      <div class="proj-po-tags"><span class="proj-po-tag">Transformación Digital</span><span class="proj-po-tag">AgTech</span><span class="proj-po-tag">KPIs</span></div>
+      <button class="btn-ver-mas-dark" onclick="openModal('cerezas')">
+        Ver detalle →
+      </button>
+    </div>
+
+    <div class="proj-po-card">
+      <div class="proj-po-num">05</div>
+      <div class="proj-po-label">Innovación · ABP 4</div>
+      <div class="proj-po-title">Design Thinking Aplicado</div>
+      <div class="proj-po-desc">Metodología Design Thinking: empatía, definición del problema, ideación, prototipado y testeo integrados con marco ágil.</div>
+      <div class="proj-po-tags"><span class="proj-po-tag">Design Thinking</span><span class="proj-po-tag">Prototipado</span></div>
+      <button class="btn-ver-mas-dark" onclick="openModal('dt')">
+        Ver detalle →
+      </button>
+    </div>
+
+    <div class="proj-po-card">
+      <div class="proj-po-num">06</div>
+      <div class="proj-po-label">Estrategia · Módulo 2</div>
+      <div class="proj-po-title">Proyecto Transformación Digital</div>
+      <div class="proj-po-desc">Análisis estratégico de brechas digitales, definición de hoja de ruta y priorización de iniciativas alineadas al negocio.</div>
+      <div class="proj-po-tags"><span class="proj-po-tag">Estrategia Digital</span><span class="proj-po-tag">Hoja de Ruta</span></div>
+      <button class="btn-ver-mas-dark" onclick="openModal('td2')">
+        Ver detalle →
+      </button>
+    </div>
+
+  </div>
+</section>
+
+<!-- SKILLS -->
+<section id="skills">
+  <div class="section-header">
+    <div class="section-num">04</div>
+    <div><div class="section-title">Habilidades <em>& competencias</em></div><div class="section-divider"></div></div>
+  </div>
+  <div class="skills-layout">
+    <div>
+      <p class="skills-intro">Más de una década combinando <strong>Gobierno TI, Gestión de Procesos y Calidad</strong> con formación activa en <strong>metodologías ágiles y rol de Product Owner</strong>. Un perfil que conecta la visión estratégica con la ejecución operativa y la entrega de valor al usuario.</p>
+    </div>
+    <div>
+      <div class="skill-group">
+        <div class="skill-group-label">Gobierno & Calidad</div>
+        <div class="chips">
+          <span class="chip chip-navy">COBIT 2019</span><span class="chip chip-navy">ITIL V4</span>
+          <span class="chip chip-navy">ISO 9001:2015</span><span class="chip chip-navy">ISO 20000-1</span><span class="chip chip-navy">ISO 27001</span>
+        </div>
+      </div>
+      <div class="skill-group">
+        <div class="skill-group-label">Product Owner & Metodologías Ágiles</div>
+        <div class="chips">
+          <span class="chip chip-po">Product Owner</span><span class="chip chip-po">Scrum Master</span>
+          <span class="chip chip-po">Backlog Management</span><span class="chip chip-po">Historias de usuario</span>
+          <span class="chip chip-po">MoSCoW</span><span class="chip chip-po">User Story Mapping</span>
+          <span class="chip chip-po">Agile Inception</span><span class="chip chip-po">Design Thinking</span>
+          <span class="chip chip-po">Lean Startup</span><span class="chip chip-po">Impact Mapping</span>
+        </div>
+      </div>
+      <div class="skill-group">
+        <div class="skill-group-label">Gestión & Procesos</div>
+        <div class="chips">
+          <span class="chip chip-outline">BPM / Bizagi</span><span class="chip chip-outline">Change Management</span>
+          <span class="chip chip-outline">Auditorías internas</span><span class="chip chip-outline">Diseño de KPIs</span>
+          <span class="chip chip-outline">Project Manager</span>
+        </div>
+      </div>
+      <div class="skill-group">
+        <div class="skill-group-label">Herramientas</div>
+        <div class="chips">
+          <span class="chip chip-outline">Power BI</span><span class="chip chip-outline">Excel avanzado</span>
+          <span class="chip chip-outline">Miro</span><span class="chip chip-outline">PowerPoint</span>
+        </div>
+      </div>
+      <div class="skill-group">
+        <div class="skill-group-label">Habilidades blandas</div>
+        <div class="chips">
+          <span class="chip chip-outline">Liderazgo de equipos</span><span class="chip chip-outline">Adaptación al cambio</span>
+          <span class="chip chip-outline">Análisis crítico</span><span class="chip chip-outline">Proactividad</span>
+          <span class="chip chip-outline">Empatía</span><span class="chip chip-outline">Metodológica</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- EDUCACIÓN -->
+<section id="educacion">
+  <div class="section-header">
+    <div class="section-num">05</div>
+    <div><div class="section-title">Formación <em>& certificaciones</em></div><div class="section-divider"></div></div>
+  </div>
+  <div class="edu-layout">
+    <div>
+      <div class="edu-card">
+        <div class="edu-degree">Ingeniería de Alimentos</div>
+        <div class="edu-school">Universidad de Santiago de Chile</div>
+        <div class="edu-year">Titulada · Promoción 2011</div>
+      </div>
+      <div class="edu-card" style="background:var(--navy-mid);">
+        <div class="edu-degree" style="font-size:15px;">Especialización en Transformación Digital & Metodologías Ágiles</div>
+        <div class="edu-school">Programa de formación continua</div>
+        <div class="edu-year">Scrum, Product Owner, Design Thinking, Agile Inception, Lean Startup · 2025–2026</div>
+      </div>
+    </div>
+    <div class="cert-stack">
+      <div class="cert-row"><div class="cert-yr">21</div><div><div class="cert-name">ITIL V4 Foundation</div><div class="cert-issuer">AXELOS</div></div></div>
+      <div class="cert-row"><div class="cert-yr">20</div><div><div class="cert-name">Scrum Foundation & Scrum Master</div><div class="cert-issuer">Certiprof</div></div></div>
+      <div class="cert-row"><div class="cert-yr">17</div><div><div class="cert-name">Gestión de Procesos</div><div class="cert-issuer">Universidad de Chile — FEN</div></div></div>
+      <div class="cert-row"><div class="cert-yr">13</div><div><div class="cert-name">Auditor Interno ISO 9001</div><div class="cert-issuer">IST</div></div></div>
+      <div class="cert-row"><div class="cert-yr">12</div><div><div class="cert-name">Auditor Interno OHSAS 18001:2007</div><div class="cert-issuer">IST</div></div></div>
+    </div>
+  </div>
+</section>
+
+<!-- CONTACTO -->
+<section id="contacto">
+  <div class="section-header">
+    <div class="section-num" style="color:var(--accent);">06</div>
+    <div><div class="section-title">¿<em>Hablamos</em>?</div><div class="section-divider"></div></div>
+  </div>
+  <p class="contact-intro">Disponible para oportunidades en Gobierno TI, Product Owner, Gestión de Procesos y Transformación Digital.</p>
+  <div class="contact-cards">
+    <div class="contact-item"><div class="ci-label">Correo</div><a href="mailto:pathygatt20@gmail.com" class="ci-value">pathygatt20@gmail.com</a></div>
+    <div class="contact-item"><div class="ci-label">Teléfono</div><a href="tel:+56985132925" class="ci-value">+56 9 8513 2925</a></div>
+    <div class="contact-item"><div class="ci-label">LinkedIn</div><a href="https://www.linkedin.com/in/patriciagaete-ceballos-08524024/" target="_blank" class="ci-value">Ver perfil completo</a></div>
+    <div class="contact-item"><div class="ci-label">Ubicación</div><span class="ci-value">Santiago, Chile</span></div>
+  </div>
+</section>
+
+<footer>
+  <div class="footer-logo">Patricia Gaete<span>.</span></div>
+  <div class="footer-copy">© 2025 · Portafolio Profesional · Santiago, Chile</div>
+</footer>
+
+<!-- ===================== MODALES ===================== -->
+
+<!-- Instrucciones: para cada proyecto, edita el contenido del modal correspondiente.
+     En modal-link-item puedes agregar: href="URL_DEL_DOCUMENTO" para enlazar PDFs, Google Drive, etc. -->
+
+<div class="modal-overlay" id="modal-carabineros">
+  <div class="modal-box">
+    <div class="modal-header">
+      <div class="modal-label">Consultoría TI · Carabineros de Chile · 2016–2017</div>
+      <div class="modal-title">Modelo de Gestión por Procesos TIC</div>
+      <button class="modal-close" onclick="closeModal('carabineros')">✕</button>
+    </div>
+    <div class="modal-body">
+      <div class="modal-section">
+        <div class="modal-section-title">Descripción del proyecto</div>
+        <p class="modal-text">Consultoría para la implementación del modelo y buenas prácticas de Gestión por Procesos en la Dirección TIC de Carabineros de Chile, basado en metodologías COBIT e ITIL.</p>
+      </div>
+      <div class="modal-section">
+        <div class="modal-section-title">Actividades realizadas</div>
+        <ul class="modal-list">
+          <li>Análisis del estado actual (As Is) de los procesos de operaciones y sistemas informáticos.</li>
+          <li>Diseño de mejoras (To Be) basadas en COBIT e ITIL.</li>
+          <li>Levantamiento, diseño e implementación del Catálogo de Servicios TIC.</li>
+          <li>Documentación de procesos y definición de roles y responsabilidades.</li>
+        </ul>
+      </div>
+      <div class="modal-section">
+        <div class="modal-section-title">Tecnologías y metodologías</div>
+        <div class="modal-tags">
+          <span class="modal-tag">COBIT</span><span class="modal-tag">ITIL</span>
+          <span class="modal-tag">Catálogo de servicios</span><span class="modal-tag">BPM</span><span class="modal-tag">Bizagi</span>
+        </div>
+      </div>
+      <div class="modal-section">
+        <div class="modal-section-title">Documentos y enlaces</div>
+        <div class="modal-link-grid">
+          <!-- EDITA AQUÍ: cambia href="#" por la URL real de tu documento -->
+          <a href="#" class="modal-link-item" target="_blank">
+            <div class="modal-link-icon"><svg viewBox="0 0 24 24" fill="none" stroke="#1A5FA8" stroke-width="1.5"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14,2 14,8 20,8"/></svg></div>
+            <div class="modal-link-text">
+              <span class="modal-link-label">Informe del proyecto</span>
+              <span class="modal-link-url">Agregar enlace → Google Drive o PDF</span>
+            </div>
+          </a>
+          <a href="#" class="modal-link-item" target="_blank">
+            <div class="modal-link-icon"><svg viewBox="0 0 24 24" fill="none" stroke="#1A5FA8" stroke-width="1.5"><rect x="3" y="3" width="18" height="18" rx="2"/><path d="M9 9h6M9 12h6M9 15h4"/></svg></div>
+            <div class="modal-link-text">
+              <span class="modal-link-label">Presentación de resultados</span>
+              <span class="modal-link-url">Agregar enlace → PowerPoint o Canva</span>
+            </div>
+          </a>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="modal-overlay" id="modal-transbank">
+  <div class="modal-box">
+    <div class="modal-header">
+      <div class="modal-label">Consultoría TI · Transbank · 2015–2016</div>
+      <div class="modal-title">Mejora de Procesos Logísticos</div>
+      <button class="modal-close" onclick="closeModal('transbank')">✕</button>
+    </div>
+    <div class="modal-body">
+      <div class="modal-section">
+        <div class="modal-section-title">Descripción del proyecto</div>
+        <p class="modal-text">Consultoría de levantamiento y mejoras de procesos en el Centro de Operaciones Logístico de Transbank, relacionados con la producción, mantención, despacho e instalación de equipos POS y PINPAD.</p>
+      </div>
+      <div class="modal-section">
+        <div class="modal-section-title">Actividades realizadas</div>
+        <ul class="modal-list">
+          <li>Levantamiento y diseño de procesos operativos del Centro Logístico.</li>
+          <li>Documentación de procesos, tareas y responsabilidades por rol.</li>
+          <li>Implementación de plan de mejoras para mitigación de brechas identificadas.</li>
+          <li>Reducción de tiempos de ejecución y registro de actividades.</li>
+        </ul>
+      </div>
+      <div class="modal-section">
+        <div class="modal-section-title">Tecnologías y metodologías</div>
+        <div class="modal-tags">
+          <span class="modal-tag">BPM</span><span class="modal-tag">Bizagi</span><span class="modal-tag">Mejora continua</span><span class="modal-tag">Logística</span>
+        </div>
+      </div>
+      <div class="modal-section">
+        <div class="modal-section-title">Documentos y enlaces</div>
+        <div class="modal-link-grid">
+          <a href="#" class="modal-link-item" target="_blank">
+            <div class="modal-link-icon"><svg viewBox="0 0 24 24" fill="none" stroke="#1A5FA8" stroke-width="1.5"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14,2 14,8 20,8"/></svg></div>
+            <div class="modal-link-text">
+              <span class="modal-link-label">Informe del proyecto</span>
+              <span class="modal-link-url">Agregar enlace → Google Drive o PDF</span>
+            </div>
+          </a>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="modal-overlay" id="modal-vtr">
+  <div class="modal-box">
+    <div class="modal-header">
+      <div class="modal-label">Consultoría TI · VTR · 2017–2018</div>
+      <div class="modal-title">Optimización de Sitios Técnicos</div>
+      <button class="modal-close" onclick="closeModal('vtr')">✕</button>
+    </div>
+    <div class="modal-body">
+      <div class="modal-section">
+        <div class="modal-section-title">Descripción del proyecto</div>
+        <p class="modal-text">Consultoría de levantamiento y mejoras de procesos operacionales en sitios técnicos VTR, orientada a minimizar tiempos de ejecución, mantener registro de actividades y reducir riesgos presentes en los procesos.</p>
+      </div>
+      <div class="modal-section">
+        <div class="modal-section-title">Actividades realizadas</div>
+        <ul class="modal-list">
+          <li>Levantamiento de procesos desarrollados en los sitios técnicos VTR.</li>
+          <li>Desarrollo de mejoras To Be para minimizar tiempos de ejecución.</li>
+          <li>Diseño de instructivos para las actividades desarrolladas por técnicos.</li>
+          <li>Identificación y mitigación de riesgos en los procesos actuales.</li>
+        </ul>
+      </div>
+      <div class="modal-section">
+        <div class="modal-section-title">Tecnologías y metodologías</div>
+        <div class="modal-tags">
+          <span class="modal-tag">Diseño de procesos</span><span class="modal-tag">Instructivos técnicos</span><span class="modal-tag">Gestión de riesgos</span>
+        </div>
+      </div>
+      <div class="modal-section">
+        <div class="modal-section-title">Documentos y enlaces</div>
+        <div class="modal-link-grid">
+          <a href="#" class="modal-link-item" target="_blank">
+            <div class="modal-link-icon"><svg viewBox="0 0 24 24" fill="none" stroke="#1A5FA8" stroke-width="1.5"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14,2 14,8 20,8"/></svg></div>
+            <div class="modal-link-text">
+              <span class="modal-link-label">Informe del proyecto</span>
+              <span class="modal-link-url">Agregar enlace → Google Drive o PDF</span>
+            </div>
+          </a>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="modal-overlay" id="modal-inn">
+  <div class="modal-box">
+    <div class="modal-header">
+      <div class="modal-label">Consultoría TI · INN · 2016</div>
+      <div class="modal-title">Sistema de Control de Procesos DAC</div>
+      <button class="modal-close" onclick="closeModal('inn')">✕</button>
+    </div>
+    <div class="modal-body">
+      <div class="modal-section">
+        <div class="modal-section-title">Descripción del proyecto</div>
+        <p class="modal-text">Análisis y diseño de nuevo sistema para la optimización y mejora de los procesos ejecutados en la División de Acreditación del INN (Instituto Nacional de Normalización).</p>
+      </div>
+      <div class="modal-section">
+        <div class="modal-section-title">Actividades realizadas</div>
+        <ul class="modal-list">
+          <li>Gestión de requerimientos y su formalización para el diseño del sistema.</li>
+          <li>Diseño y mejora de componentes existentes utilizando UML.</li>
+          <li>Diseño de Mockups para los distintos procesos de acreditación.</li>
+          <li>Documentación y revisión de procesos diseñados.</li>
+        </ul>
+      </div>
+      <div class="modal-section">
+        <div class="modal-section-title">Tecnologías y metodologías</div>
+        <div class="modal-tags">
+          <span class="modal-tag">UML</span><span class="modal-tag">Gestión de requerimientos</span><span class="modal-tag">Mockups</span><span class="modal-tag">BPM</span>
+        </div>
+      </div>
+      <div class="modal-section">
+        <div class="modal-section-title">Documentos y enlaces</div>
+        <div class="modal-link-grid">
+          <a href="#" class="modal-link-item" target="_blank">
+            <div class="modal-link-icon"><svg viewBox="0 0 24 24" fill="none" stroke="#1A5FA8" stroke-width="1.5"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14,2 14,8 20,8"/></svg></div>
+            <div class="modal-link-text">
+              <span class="modal-link-label">Informe del proyecto</span>
+              <span class="modal-link-url">Agregar enlace → Google Drive o PDF</span>
+            </div>
+          </a>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="modal-overlay" id="modal-bioma1">
+  <div class="modal-box">
+    <div class="modal-header">
+      <div class="modal-label">Product Owner · BIOMA · Módulo 3</div>
+      <div class="modal-title">Vitrina Digital para Pymes Turísticas</div>
+      <button class="modal-close" onclick="closeModal('bioma1')">✕</button>
+    </div>
+    <div class="modal-body">
+      <div class="modal-section">
+        <div class="modal-section-title">Descripción</div>
+        <p class="modal-text">Plataforma digital MVP orientada a visibilizar y conectar pymes y emprendimientos turísticos de la Región de Los Ríos. Proyecto validado con encuesta real y análisis competitivo frente a TripAdvisor y Chile Travel (SERNATUR).</p>
+      </div>
+      <div class="modal-section">
+        <div class="modal-section-title">Entregables desarrollados</div>
+        <ul class="modal-list">
+          <li>Modelo Canvas completo con socios, actividades, recursos y fuentes de ingreso.</li>
+          <li>Hipótesis de valor y de crecimiento con métricas de decisión (perseverar/pivotar/iterar).</li>
+          <li>Diseño de encuesta de validación con 5 preguntas clave.</li>
+          <li>Landing page MVP publicada en GitHub Pages.</li>
+          <li>Análisis competitivo y propuesta de diferenciación territorial.</li>
+        </ul>
+      </div>
+      <div class="modal-section">
+        <div class="modal-section-title">Metodologías</div>
+        <div class="modal-tags">
+          <span class="modal-tag">MVP</span><span class="modal-tag">Modelo Canvas</span><span class="modal-tag">Lean Startup</span><span class="modal-tag">Validación temprana</span>
+        </div>
+      </div>
+      <div class="modal-section">
+        <div class="modal-section-title">Documentos y enlaces</div>
+        <div class="modal-link-grid">
+          <a href="https://ricardose14.github.io/Bioma/" class="modal-link-item" target="_blank">
+            <div class="modal-link-icon"><svg viewBox="0 0 24 24" fill="none" stroke="#1A5FA8" stroke-width="1.5"><circle cx="12" cy="12" r="10"/><path d="M2 12h20M12 2a15 15 0 0 1 0 20M12 2a15 15 0 0 0 0 20"/></svg></div>
+            <div class="modal-link-text">
+              <span class="modal-link-label">Landing page BIOMA (MVP)</span>
+              <span class="modal-link-url">ricardose14.github.io/Bioma</span>
+            </div>
+          </a>
+          <a href="https://bit.ly/4ae3UQa" class="modal-link-item" target="_blank">
+            <div class="modal-link-icon"><svg viewBox="0 0 24 24" fill="none" stroke="#1A5FA8" stroke-width="1.5"><path d="M9 11l3 3L22 4"/><path d="M21 12v7a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11"/></svg></div>
+            <div class="modal-link-text">
+              <span class="modal-link-label">Encuesta de validación</span>
+              <span class="modal-link-url">bit.ly/4ae3UQa</span>
+            </div>
+          </a>
+          <a href="#" class="modal-link-item" target="_blank">
+            <div class="modal-link-icon"><svg viewBox="0 0 24 24" fill="none" stroke="#1A5FA8" stroke-width="1.5"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14,2 14,8 20,8"/></svg></div>
+            <div class="modal-link-text">
+              <span class="modal-link-label">Informe Módulo 3 (PDF)</span>
+              <span class="modal-link-url">Agregar enlace → Google Drive</span>
+            </div>
+          </a>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="modal-overlay" id="modal-bioma2">
+  <div class="modal-box">
+    <div class="modal-header">
+      <div class="modal-label">Product Owner · BIOMA · ABP 6</div>
+      <div class="modal-title">Narrativa y Roadmap de Producto</div>
+      <button class="modal-close" onclick="closeModal('bioma2')">✕</button>
+    </div>
+    <div class="modal-body">
+      <div class="modal-section">
+        <div class="modal-section-title">Descripción</div>
+        <p class="modal-text">Ejercicio completo del rol de Product Owner en la plataforma BIOMA: definición de visión, roadmap por etapas, historias de usuario con criterios de aceptación, priorización y métricas de seguimiento Scrum.</p>
+      </div>
+      <div class="modal-section">
+        <div class="modal-section-title">Entregables</div>
+        <ul class="modal-list">
+          <li>Visión de producto y presupuesto del equipo Scrum (~$26.275.000).</li>
+          <li>Roadmap en 4 etapas: habilitación → experiencia → confianza → escalamiento.</li>
+          <li>4 historias de usuario con criterios de aceptación y Definition of Done (DoD).</li>
+          <li>Priorización con matriz de evaluación y técnica MoSCoW.</li>
+          <li>KPIs de producto y métricas ágiles: velocity, burndown y CFD.</li>
+          <li>Narrativa coherente del producto de inicio a cierre.</li>
+        </ul>
+      </div>
+      <div class="modal-section">
+        <div class="modal-section-title">Metodologías</div>
+        <div class="modal-tags">
+          <span class="modal-tag">Scrum</span><span class="modal-tag">Product Owner</span><span class="modal-tag">MoSCoW</span>
+          <span class="modal-tag">Historias de usuario</span><span class="modal-tag">KPIs</span><span class="modal-tag">Roadmap</span>
+        </div>
+      </div>
+      <div class="modal-section">
+        <div class="modal-section-title">Documentos y enlaces</div>
+        <div class="modal-link-grid">
+          <a href="#" class="modal-link-item" target="_blank">
+            <div class="modal-link-icon"><svg viewBox="0 0 24 24" fill="none" stroke="#1A5FA8" stroke-width="1.5"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14,2 14,8 20,8"/></svg></div>
+            <div class="modal-link-text">
+              <span class="modal-link-label">Informe ABP 6 (PDF)</span>
+              <span class="modal-link-url">Agregar enlace → Google Drive</span>
+            </div>
+          </a>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="modal-overlay" id="modal-edudigital">
+  <div class="modal-box">
+    <div class="modal-header">
+      <div class="modal-label">Product Owner · EduDigital · ABP 7</div>
+      <div class="modal-title">Agile Inception — Plataforma PAES</div>
+      <button class="modal-close" onclick="closeModal('edudigital')">✕</button>
+    </div>
+    <div class="modal-body">
+      <div class="modal-section">
+        <div class="modal-section-title">Descripción</div>
+        <p class="modal-text">Aplicación completa de Agile Inception para EduDigital, plataforma móvil diseñada para facilitar la preparación de la PAES para estudiantes de 4° medio, centralizando recursos de Lenguaje y Matemáticas en una experiencia personalizada.</p>
+      </div>
+      <div class="modal-section">
+        <div class="modal-section-title">Entregables</div>
+        <ul class="modal-list">
+          <li>Elevator Pitch y caja de producto ("Aprende sin límites, desde tu celular").</li>
+          <li>Identificación de stakeholders: usuarios, negocio, desarrollo e indirectos.</li>
+          <li>MVP de 12 semanas en 6 sprints con beta cerrada en semana 8.</li>
+          <li>User Story Mapping con 3 flujos principales del estudiante.</li>
+          <li>Mapa de Empatía del usuario objetivo.</li>
+          <li>Impact Mapping: objetivo → actores → impactos → entregables.</li>
+          <li>Gestión de riesgos: baja adopción, conectividad rural, competencia.</li>
+        </ul>
+      </div>
+      <div class="modal-section">
+        <div class="modal-section-title">Metodologías</div>
+        <div class="modal-tags">
+          <span class="modal-tag">Agile Inception</span><span class="modal-tag">User Story Mapping</span>
+          <span class="modal-tag">Impact Mapping</span><span class="modal-tag">Mapa de Empatía</span><span class="modal-tag">Design Thinking</span>
+        </div>
+      </div>
+      <div class="modal-section">
+        <div class="modal-section-title">Documentos y enlaces</div>
+        <div class="modal-link-grid">
+          <a href="#" class="modal-link-item" target="_blank">
+            <div class="modal-link-icon"><svg viewBox="0 0 24 24" fill="none" stroke="#1A5FA8" stroke-width="1.5"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14,2 14,8 20,8"/></svg></div>
+            <div class="modal-link-text">
+              <span class="modal-link-label">Informe ABP 7 (PDF)</span>
+              <span class="modal-link-url">Agregar enlace → Google Drive</span>
+            </div>
+          </a>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="modal-overlay" id="modal-cerezas">
+  <div class="modal-box">
+    <div class="modal-header">
+      <div class="modal-label">Transformación Digital · AgTech · Módulo 2</div>
+      <div class="modal-title">Cerezas Lida — Producción Inteligente</div>
+      <button class="modal-close" onclick="closeModal('cerezas')">✕</button>
+    </div>
+    <div class="modal-body">
+      <div class="modal-section">
+        <div class="modal-section-title">Descripción</div>
+        <p class="modal-text">Proyecto de transformación digital para empresa frutícola exportadora. Diagnóstico de la situación actual, definición de objetivos estratégicos con KPIs y plan de inversión para tecnologías AgTech de riego inteligente y control de calidad organoléptica.</p>
+      </div>
+      <div class="modal-section">
+        <div class="modal-section-title">Entregables</div>
+        <ul class="modal-list">
+          <li>Análisis de situación actual y contexto AgTech en Chile (Agrotech Chile).</li>
+          <li>OE1: Incrementar rendimiento +15% por hectárea en 2 temporadas.</li>
+          <li>OE2: Alcanzar ≥90% de fruta dentro de estándares premium de firmeza y dulzor.</li>
+          <li>Plan presupuestario de 77 millones CLP con priorización de iniciativas.</li>
+          <li>Iniciativa 1: Sistema riego inteligente + sensores humedad (CDTEC, 5000 CLP/m²).</li>
+          <li>Iniciativa 2: Consultoría AgroMAP para optimización de suelos ($10.000.000).</li>
+        </ul>
+      </div>
+      <div class="modal-section">
+        <div class="modal-section-title">Tecnologías y metodologías</div>
+        <div class="modal-tags">
+          <span class="modal-tag">AgTech</span><span class="modal-tag">Transformación Digital</span>
+          <span class="modal-tag">KPIs estratégicos</span><span class="modal-tag">Priorización de iniciativas</span>
+        </div>
+      </div>
+      <div class="modal-section">
+        <div class="modal-section-title">Documentos y enlaces</div>
+        <div class="modal-link-grid">
+          <a href="#" class="modal-link-item" target="_blank">
+            <div class="modal-link-icon"><svg viewBox="0 0 24 24" fill="none" stroke="#1A5FA8" stroke-width="1.5"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14,2 14,8 20,8"/></svg></div>
+            <div class="modal-link-text">
+              <span class="modal-link-label">Informe Módulo 2 (PDF)</span>
+              <span class="modal-link-url">Agregar enlace → Google Drive</span>
+            </div>
+          </a>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="modal-overlay" id="modal-dt">
+  <div class="modal-box">
+    <div class="modal-header">
+      <div class="modal-label">Innovación · ABP 4</div>
+      <div class="modal-title">Design Thinking Aplicado</div>
+      <button class="modal-close" onclick="closeModal('dt')">✕</button>
+    </div>
+    <div class="modal-body">
+      <div class="modal-section">
+        <div class="modal-section-title">Descripción</div>
+        <p class="modal-text">Aplicación de la metodología Design Thinking como motor de innovación centrada en el usuario, integrada con el marco ágil para el desarrollo de soluciones digitales orientadas al valor.</p>
+      </div>
+      <div class="modal-section">
+        <div class="modal-section-title">Fases desarrolladas</div>
+        <ul class="modal-list">
+          <li>Empatía: entrevistas y observación del usuario objetivo.</li>
+          <li>Definición: síntesis del problema y punto de vista del usuario.</li>
+          <li>Ideación: generación de soluciones creativas con técnicas de brainstorming.</li>
+          <li>Prototipado: construcción de prototipo de baja fidelidad.</li>
+          <li>Testeo: validación con usuarios reales y ciclo de iteración.</li>
+        </ul>
+      </div>
+      <div class="modal-section">
+        <div class="modal-section-title">Metodologías</div>
+        <div class="modal-tags">
+          <span class="modal-tag">Design Thinking</span><span class="modal-tag">Prototipado</span>
+          <span class="modal-tag">Innovación</span><span class="modal-tag">Centrado en el usuario</span>
+        </div>
+      </div>
+      <div class="modal-section">
+        <div class="modal-section-title">Documentos y enlaces</div>
+        <div class="modal-link-grid">
+          <a href="#" class="modal-link-item" target="_blank">
+            <div class="modal-link-icon"><svg viewBox="0 0 24 24" fill="none" stroke="#1A5FA8" stroke-width="1.5"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14,2 14,8 20,8"/></svg></div>
+            <div class="modal-link-text">
+              <span class="modal-link-label">Informe ABP 4 (PDF)</span>
+              <span class="modal-link-url">Agregar enlace → Google Drive</span>
+            </div>
+          </a>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="modal-overlay" id="modal-td2">
+  <div class="modal-box">
+    <div class="modal-header">
+      <div class="modal-label">Estrategia · Módulo 2</div>
+      <div class="modal-title">Proyecto de Transformación Digital</div>
+      <button class="modal-close" onclick="closeModal('td2')">✕</button>
+    </div>
+    <div class="modal-body">
+      <div class="modal-section">
+        <div class="modal-section-title">Descripción</div>
+        <p class="modal-text">Análisis estratégico para la transformación digital de una organización: identificación de brechas digitales, definición de hoja de ruta y priorización de iniciativas alineadas con los objetivos del negocio.</p>
+      </div>
+      <div class="modal-section">
+        <div class="modal-section-title">Entregables</div>
+        <ul class="modal-list">
+          <li>Diagnóstico del nivel de madurez digital de la organización.</li>
+          <li>Identificación de brechas y oportunidades de mejora.</li>
+          <li>Definición de hoja de ruta con iniciativas priorizadas.</li>
+          <li>Alineación de iniciativas con objetivos estratégicos del negocio.</li>
+        </ul>
+      </div>
+      <div class="modal-section">
+        <div class="modal-section-title">Metodologías</div>
+        <div class="modal-tags">
+          <span class="modal-tag">Transformación Digital</span><span class="modal-tag">Estrategia</span>
+          <span class="modal-tag">Hoja de Ruta</span><span class="modal-tag">Análisis de brechas</span>
+        </div>
+      </div>
+      <div class="modal-section">
+        <div class="modal-section-title">Documentos y enlaces</div>
+        <div class="modal-link-grid">
+          <a href="#" class="modal-link-item" target="_blank">
+            <div class="modal-link-icon"><svg viewBox="0 0 24 24" fill="none" stroke="#1A5FA8" stroke-width="1.5"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14,2 14,8 20,8"/></svg></div>
+            <div class="modal-link-text">
+              <span class="modal-link-label">Informe Módulo 2 (PDF)</span>
+              <span class="modal-link-url">Agregar enlace → Google Drive</span>
+            </div>
+          </a>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- SCRIPTS -->
+<script>
+  // Timeline animation
+  const entries = document.querySelectorAll('.tl-entry');
+  const obs = new IntersectionObserver((items) => {
+    items.forEach((item, i) => {
+      if (item.isIntersecting) {
+        setTimeout(() => item.target.classList.add('visible'), i * 120);
+        obs.unobserve(item.target);
+      }
+    });
+  }, { threshold: 0.1 });
+  entries.forEach(e => obs.observe(e));
+
+  // Modal system
+  function openModal(id) {
+    const overlay = document.getElementById('modal-' + id);
+    if (overlay) {
+      overlay.classList.add('active');
+      document.body.style.overflow = 'hidden';
+    }
+  }
+
+  function closeModal(id) {
+    const overlay = document.getElementById('modal-' + id);
+    if (overlay) {
+      overlay.classList.remove('active');
+      document.body.style.overflow = '';
+    }
+  }
+
+  // Close modal clicking outside the box
+  document.querySelectorAll('.modal-overlay').forEach(overlay => {
+    overlay.addEventListener('click', function(e) {
+      if (e.target === this) {
+        this.classList.remove('active');
+        document.body.style.overflow = '';
+      }
+    });
+  });
+
+  // Close modal with Escape key
+  document.addEventListener('keydown', function(e) {
+    if (e.key === 'Escape') {
+      document.querySelectorAll('.modal-overlay.active').forEach(overlay => {
+        overlay.classList.remove('active');
+        document.body.style.overflow = '';
+      });
+    }
+  });
+</script>
+</body>
+</html>
