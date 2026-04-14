@@ -1,2 +1,2 @@
-# patriciagaete
-Portafolio Product owner
+# Portafolio 
+Portafolio profesional Patricia Gaete
